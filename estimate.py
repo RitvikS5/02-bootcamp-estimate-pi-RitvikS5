@@ -1,11 +1,12 @@
 import math
 import unittest
+import random
 
 def wallis(i):
-    sum=0    
-    for x in range(0,i):
-        sum+=(8*(n**2))/(4*(n**2)-1) 
-    return sum
+    sum=1   
+    for x in range(1,i):
+        sum=sum*(4*(x**2))/(4*(x**2)-1) 
+    return 2*sum
     
 def monte_carlo(i):
     circle_ar=0
@@ -18,11 +19,11 @@ def monte_carlo(i):
         if dist<=1:
             circle_ar+=1
             total_ar+=1
-            prob+=circle_ar/total_ar
+            prob=4*circle_ar/total_ar
         else:
             total_ar+=1
-            prob+=circle_ar/total_ar
-    return 4*prob
+            prob=4*circle_ar/total_ar
+    return prob
          
     
 class TestWallis(unittest.TestCase):
