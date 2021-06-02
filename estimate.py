@@ -1,6 +1,30 @@
 import math
 import unittest
 
+def wallis(i):
+    sum=0    
+    for x in range(0,i):
+        sum+=(8*(n**2))/(4*(n**2)-1) 
+    return sum
+    
+def monte_carlo(i):
+    circle_ar=0
+    total_ar=0
+    prob=0
+    for j in range(0,i):
+        x=random.random()
+        y=random.random()  
+        dist=(x**2+y**2)**0.5
+        if dist<=1:
+            circle_ar+=1
+            total_ar+=1
+            prob+=circle_ar/total_ar
+        else:
+            total_ar+=1
+            prob+=circle_ar/total_ar
+    return 4*prob
+         
+    
 class TestWallis(unittest.TestCase):
     def test_low_iters(self):
         for i in range(0, 5):
